@@ -9,24 +9,23 @@
 int main(int argc, char **argv)
 {
   
-  ros::init(argc, argv, "sf_light");
-  ros::NodeHandle nodeSub;
+    ros::init(argc, argv, "sf_light");
+    ros::NodeHandle nodeSub;
 
-  //Serial Comm 
-  char * serialPort = "/dev/ttyACM0";
-  int baud = B115200;
-  SFLightSubscriber sf_lightSub(serialPort, baud, nodeSub);	//setup serial connection to Arduino and send in ros's nodeHandle
+    //Serial Comm
+    char * serialPort = "/dev/ttyACM0";
+    int baud = B115200;
+    SFLightSubscriber sf_lightSub(serialPort, baud, nodeSub);	//setup serial connection to Arduino and send in ros's nodeHandle
 
-  sf_lightSub.init(); //subscribe to topic and setup the call back function.
+    sf_lightSub.init(); //subscribe to topic and setup the call back function.
 
- 	ros::Rate loop_rate(10);
+    ros::Rate loop_rate(10);
  	
- 	while (ros::ok())
- 	{
-   	ros::spinOnce();
-  	loop_rate.sleep();
-  
-  }
+    while (ros::ok())
+    {
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
 	
-  return 0;
+    return 0;
 }

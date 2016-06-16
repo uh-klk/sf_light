@@ -31,31 +31,29 @@ class ArduinoSerialCommunication
 {
 public:
 
-	ArduinoSerialCommunication(char* portname, int baudrate) : portname_(portname), baudrate_(baudrate) 
-	{	
-		fh_ = -1;
-	};
+    ArduinoSerialCommunication(char* portname, int baudrate) : portname_(portname), baudrate_(baudrate)
+    {
+        fh_ = -1;
+    };
 	
-	~ArduinoSerialCommunication()
-	{
-	  closePort();
-	}
-	void setPort(char* portname);
-	void setBaud(int baudrate);
-	int openPort();
-	void closePort();
-	void signalHandler( int signum );
-	int set_interface_attribs (int fh, int speed, int parity);
-	void set_blocking (int fh, int should_block);
-	void sendData(unsigned char *data1, int arraySize);
-	
-	unsigned char calChkSum(unsigned char *payload, int payloadSize);
-
+    ~ArduinoSerialCommunication()
+    {
+        closePort();
+    }
+    void setPort(char* portname);
+    void setBaud(int baudrate);
+    int openPort();
+    void closePort();
+    void signalHandler( int signum );
+    int set_interface_attribs (int fh, int speed, int parity);
+    void set_blocking (int fh, int should_block);
+    void sendData(unsigned char *data1, int arraySize);
+    unsigned char calChkSum(unsigned char *payload, int payloadSize);
 
 protected:
-	int fh_; //file handle
- 	char *portname_; //i.e. "/dev/ttyACM0";
-	int baudrate_;
+    int fh_; //file handle
+    char *portname_; //i.e. "/dev/ttyACM0";
+    int baudrate_;
 };
 
 
