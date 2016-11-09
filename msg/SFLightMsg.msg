@@ -6,7 +6,7 @@ uint8                   BREATH = 3      # fading the LED Display in and out of t
 uint8                   SWEEP = 8       # 1 led running in clockwise
 
 float32                 frequency 	    # hz - blink/sec, round/sec
-uint8                   priority 	      # priority between 0 to 100. Default priority is 50,
+uint8                   priority 	    # priority between 0 to 100. Default priority is 50,
 std_msgs/ColorRGBA      color           # A not being use
 float32                 on_pct 	        # duration the light should be on per cycle in %
                                         # i.e full cycle = 1 

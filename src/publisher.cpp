@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     sf_light::SFLightMsg msg; //the message type
  	
     msg.mode = 3;
-    msg.frequency = 1; //how many sine wave cycle (i.e.on-off) per sec.
+    msg.frequency = 0.5; //how many sine wave cycle (i.e.on-off) per sec.
     msg.priority = 10;
     msg.color.r = 255;
     msg.color.g = 255;
